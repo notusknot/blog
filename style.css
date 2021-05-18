@@ -1,0 +1,153 @@
+@font-face {
+    font-family: "Poppins";
+    src: url(/assets/Poppins-SemiBold.otf);
+}
+@font-face {
+    font-family:"Poppins-medium";
+    src:url(/assets/Poppins-Medium.otf)
+}
+
+@font-face {
+    font-family:"Roboto";
+    src:url(/assets/Roboto-Regular.ttf)
+}
+@font-face {
+    font-family: "Poppins-light";
+    src:url(/assets/Poppins-Light.otf)
+}
+
+:root {
+    --dark: #710FEE;
+    --radius: 15px;
+}
+
+strong {color: var(--dark)}
+
+*,button,input {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins-medium", Helvetica;
+    color: #000;
+}
+
+body {
+    min-height: 100vh;
+}
+
+header {
+    display: flex;
+    min-height: 10rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4rem;
+}
+
+.headerInfo {
+    flex: 6;
+}
+
+.headerLink {
+    flex: 1;
+}
+
+a {
+    font-size: 30px;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+main  {
+    display: grid;
+    gap: 3.5rem;
+    padding: 0 20vw;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.articlePreview {
+    display:flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-radius: var(--radius);
+}
+
+.date {
+    font-family: "Poppins-light", Helvetica;
+}
+
+.previewTitle {
+    color: var(--dark);
+    font-family: "Poppins", Helvetica;
+}
+
+img {
+    width: clamp(100%);
+    border-radius: var(--radius);
+    object-fit: cover;
+    transition: transform .07s ease-in;
+    will-change: auto;
+}
+
+img:focus,img:hover {
+    transform: translate(.3rem,-.3rem);
+    transition: transform .1s ease-out
+}
+
+
+@media screen and (max-width:700px) {
+    .headerInfo {
+        display:none;
+    }
+    .headerLink {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:500px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+    .previewDesc {
+        display:none;
+    }
+    .previewTitle {
+        text-align: center;
+    }
+    .info {
+        display: flex;
+        flex-direction: column;
+    }
+    .date {
+        text-align: center;
+    }
+    .headerLink {
+        font-size: 1.2rem;
+    }
+}
+
+.articleWrap {
+    display: grid;
+    grid-template-columns:
+    1fr min(65ch, 100%) 1fr;
+}
+.articleWrap > * {
+    grid-column: 2;
+    font-family: "Roboto";
+}
+
+pre {
+    background-color: #eff1f6;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: var(--radius);
+}
+.clr1 {
+    color: red;
+}
+
+code, code span {
+    font-family: monospace;
+    font-size: 1rem;
+}
+
+

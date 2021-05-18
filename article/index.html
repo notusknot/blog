@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Notusknot's blog; featuring web development tutorials and thoughts 🙂">
+    <link rel="stylesheet" href="/style.css">
+    <title>Notusknot's Blog</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="headerInfo">Notusknot's <strong>Blog</strong></h1>
+        <a class="headerLink" href="/">Home</a></li>
+        <a class="headerLink" href="/posts">Posts</a></li>
+        <a class="headerLink" href="/code">Code</a></li>
+    </header>
+    <main class="articleWrap">
+        <article>
+            <p>
+                The common term for this kind of thing is “full-bleed”. It's a term borrowed from the publishing world; when something
+                is printed full-bleed, it extends to the very edge of the paper.
+                This new requirement makes the problem considerably more tricky. It's relatively easy to constrain all children, but CSS
+                doesn't really have a mechanism to selectively constrain some children.
+            </p>
+
+            <h2>The solution</h2>
+
+            <p>Let's start at the end, with our solution:</p>
+
+
+
+            <pre><code>img {
+    <span class="clr1">width:</span> clamp(100%);
+    border-radius: var(--radius);
+    object-fit: cover;
+    transition: transform .07s ease-in;
+    will-change: auto;
+}</code></pre>
+        </article>
+    </main>
+</body>
+
+</html>
