@@ -1,0 +1,40 @@
+#!/usr/bin/env sh
+
+
+setTemplate() { 
+        read -erp "Choose a template file (an html file that includes things other than your article; like a navbar, script tag, etc): " template
+        echo $template > templateSave.txt
+}
+
+newpost() { 
+        if [ -e templateSave.txt ]; then 
+                template=`cat templateSave.txt`
+                read -erp "Choose a title for your post (this will appear in the url bar): " title
+                # echo '[//]: # (Start editing your post in Markdown! It will be compiled and added to your site automatically) \n' > $title.md
+                if [ $EDITOR ]; then
+                        # $EDITOR $title.md
+                        $EDITOR $title.html
+                else
+                        # vim $title.md
+                        vim $title.html
+                fi
+                mkdir posts/$title/
+                cp $template posts/$title/index.html
+                
+                sed -i "/<!-- bmanager -->/r posts/$title/index.html" "$title.html"
+                # echo $title.html >> posts/$title/index.html
+                mv $title.html posts/$title/$title.html
+                echo 'Post complete!'
+        else
+                setTemplate
+        fi
+}
+
+case "$1" in 
+        new*) newpost ;;
+        n*) newpost ;;
+        template*) setTemplate ;;
+        t*) setTemplate ;;
+        *) printf "\\nUsage:\\n  lb n:\\tnew draft\\n  lb e:\\tedit draft\\n  lb p:\\tpublish/finalize draft\\n  lb r:\\trevise published entry\\n  lb t:\\tdiscard draft\\n  lb d:\\tdelete published entry\\n\\nBe sure to have the following pattern added to your RSS feed, blog file and blog index:\\n\\n<!-- LB -->\\n\\nNew content will be added directly below that sequence. This is required.\\n" ;;
+
+esac

@@ -93,7 +93,6 @@ img:focus,img:hover {
     transition: transform .1s ease-out
 }
 
-
 @media screen and (max-width:700px) {
     .headerInfo {
         display:none;
@@ -142,9 +141,16 @@ pre {
     border-radius: var(--radius);
 }
 .clr1 {
-    color: red;
+    color: #2a85cf;
+}
+asdf
+.clr2 {
+    color: #509546;
 }
 
+.clr3 {
+    color: purple;
+}
 code, code span {
     font-family: monospace;
     font-size: 1rem;
