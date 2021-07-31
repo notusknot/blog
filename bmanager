@@ -1,40 +1,47 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
+# Dont change these
+title="$2"
+blogFile="$3"
+
+formattedTitle=$( echo $title | awk '{$1=toupper(substr($1,0,1))substr($1,2)}1' | tr '-' ' ' )
+templateFile=template.html # Your template file
+indexFile=index.html # Your index file (that lists all of the posts)
+url="http://127.0.0.1:8080" # The base url of your site (no trailing slash)
+blogDir=$(pwd) # The directory of your blog
 
 setTemplate() { 
-        read -erp "Choose a template file (an html file that includes things other than your article; like a navbar, script tag, etc): " template
-        echo $template > templateSave.txt
+    echo "To use bmanager, you need to create a template file which includes things you want on every page, like a navbar or script tag.
+    By default, bmanager looks for a file called template.html, but you can change it by changing the 'templateFile' variable in the bmanager file.
+    You also need to add '<!--bmanager-->' to your template file, which will be replaced with the html for your blog."
 }
 
 newpost() { 
-        if [ -e templateSave.txt ]; then 
-                template=`cat templateSave.txt`
-                read -erp "Choose a title for your post (this will appear in the url bar): " title
-                # echo '[//]: # (Start editing your post in Markdown! It will be compiled and added to your site automatically) \n' > $title.md
-                if [ $EDITOR ]; then
-                        # $EDITOR $title.md
-                        $EDITOR $title.html
-                else
-                        # vim $title.md
-                        vim $title.html
-                fi
-                mkdir posts/$title/
-                cp $template posts/$title/index.html
-                
-                sed -i "/<!-- bmanager -->/r posts/$title/index.html" "$title.html"
-                # echo $title.html >> posts/$title/index.html
-                mv $title.html posts/$title/$title.html
-                echo 'Post complete!'
-        else
-                setTemplate
-        fi
+        [ -e $templateFile ] &&
+            mkdir -p "$blogDir"/posts/"$title"/ # Creates the directory for the new post
+            cp $templateFile bmanager.html || setTemplate # Copy the template file to temporary file
+            sed -i '/<!--bmanager-->/{
+                s/<!--bmanager-->//g
+                r article.html
+            }' bmanager.html # Replace bmanager tag with blog content
+            mv bmanager.html "$blogDir"/posts/"$title"/index.html # Move file to proper location
+            # If the user wants to delete the article file, delete it
+            read -erp "Do you want to delete your initial article file (the full page has already been added to your site) y/n " deleteArticle
+            case "$deleteArticle" in
+                y) rm "$blogFile" ;; yes) rm "$blogFile" ;; n) true ;; no) true ;;
+            esac
+            sed -i "17 i <div class=\"articlePreview\"> <div class=\"info\"> <span class=\"date\">$(date '+%B %d, %Y')</span> <a href="$url/posts/$title"><h2 class=\"previewTitle\">$formattedTitle</h2></a> </div> </div>" index.html
+        [ -e $templateFile ] || setTemplate # If there is no template file give them instructions
 }
 
-case "$1" in 
-        new*) newpost ;;
-        n*) newpost ;;
-        template*) setTemplate ;;
-        t*) setTemplate ;;
-        *) printf "\\nUsage:\\n  lb n:\\tnew draft\\n  lb e:\\tedit draft\\n  lb p:\\tpublish/finalize draft\\n  lb r:\\trevise published entry\\n  lb t:\\tdiscard draft\\n  lb d:\\tdelete published entry\\n\\nBe sure to have the following pattern added to your RSS feed, blog file and blog index:\\n\\n<!-- LB -->\\n\\nNew content will be added directly below that sequence. This is required.\\n" ;;
-
+case "$1" in # if there is no command or an invalid command for bmanager, print the instructions
+        new) newpost ;; n) newpost ;; 
+        template) setTemplate ;; t) setTemplate ;;
+        *) printf "\nUsage:\n 
+        bmanager new (or n):\tCreate a new post\n 
+        bmanager template (or t):\tInstructions for the template file\n
+        Make sure that bmanager is in the root directory of your blog\n
+        Be sure to have the following pattern added to your RSS feed, blog file and blog index:
+        \n\n<!--bmanager-->\n\n
+        To create a new post: bmanager new title-of-your-post article-file.html" ;;
 esac
