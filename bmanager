@@ -7,7 +7,7 @@ blogFile="$3"
 formattedTitle=$( echo "$title" | awk '{$1=toupper(substr($1,0,1))substr($1,2)}1' | tr '-' ' ' )
 templateFile=template.html # Your template file
 indexFile=index.html # Your index file (that lists all of the posts)
-url="http://10.0.0.187" # The base url of your site (no trailing slash)
+url="http://73.170.139.156" # The base url of your site (no trailing slash)
 blogDir=$(pwd) # The directory of your blog
 
 setTemplate() { 
