@@ -47,6 +47,7 @@ p, h1, h2, .highlight{
 h1, h2 {
     display:flex;
     padding: 3rem 0;
+    color: var(--accent);
 }
 
 p, h2, .highlight {
