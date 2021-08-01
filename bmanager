@@ -4,7 +4,7 @@
 title="$2"
 blogFile="$3"
 
-formattedTitle=$( echo $title | awk '{$1=toupper(substr($1,0,1))substr($1,2)}1' | tr '-' ' ' )
+formattedTitle=$( echo "$title" | awk '{$1=toupper(substr($1,0,1))substr($1,2)}1' | tr '-' ' ' )
 templateFile=template.html # Your template file
 indexFile=index.html # Your index file (that lists all of the posts)
 url="http://127.0.0.1:8080" # The base url of your site (no trailing slash)
@@ -30,7 +30,7 @@ newpost() {
             case "$deleteArticle" in
                 y) rm "$blogFile" ;; yes) rm "$blogFile" ;; n) true ;; no) true ;;
             esac
-            sed -i "17 i <div class=\"articlePreview\"> <div class=\"info\"> <span class=\"date\">$(date '+%B %d, %Y')</span> <a href="$url/posts/$title"><h2 class=\"previewTitle\">$formattedTitle</h2></a> </div> </div>" index.html
+            sed -i "17 i <div class=\"articlePreview\"> <div class=\"info\"> <span class=\"date\">$(date '+%B %d, %Y')</span> <a href="$url/posts/"$title""><h2 class=\"previewTitle\">$formattedTitle</h2></a> </div> </div>" $indexFile
         [ -e $templateFile ] || setTemplate # If there is no template file give them instructions
 }
 
