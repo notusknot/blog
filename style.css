@@ -1,6 +1,6 @@
 @font-face {
     font-family: "jetbrains-mono";
-    src: url("/jetbrains-mono.regular.ttf")
+    src: url("jetbrains-mono.regular.ttf")
 }
 
 :root {
@@ -28,8 +28,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: none;
 }
-a, span, p {
+span, p {
     font-size: 19px;
     text-decoration: none;
 }
@@ -46,13 +47,14 @@ p, h1, h2, .highlight{
 
 h1, h2 {
     display:flex;
-    padding: 3rem 0;
+    padding: 3rem 0 1.5rem;
     color: var(--accent);
 }
 
-p, h2, .highlight {
+h1 { padding: 0 2rem !important; font-size: 1.75rem; }
+
+p, .highlight, ol {
     margin-bottom: 2.5rem;
-    padding: 0;
 }
 
 .highlight {
@@ -70,6 +72,12 @@ header {
     border-bottom: solid 3px;
 }
 
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 h1:before, h1:after, h2:before, h2:after {
     color: var(--bg-light);
     content:'';
@@ -84,7 +92,9 @@ main  {
     flex-direction: column;
     align-items: center;
     margin: 0 8rem;
+    width: 100%;
     max-width: 50em;
+    padding: 0 2rem;
 }
 
 .articlePreview {
@@ -98,3 +108,53 @@ main  {
     padding: 0;
 }
 
+pre {
+    overflow-x: scroll;
+}
+
+@media screen and (max-width: 700px) {
+    h1, h2 {
+        font-size: 1.35rem;
+        padding: 1rem 0;
+    }
+    p { font-size: 1.1rem; }
+}
+@media screen and (max-width: 500px) {
+    h1::before, h2::before {
+        display: none;
+    }
+    h2 {
+        margin: 0;
+    }
+}
+
+ol, ul {
+    padding-left: 2rem;
+    width: 100%;
+}
+
+
+* { word-wrap:break-word; }
+
+.heroChunk {
+    padding-top: 2rem;
+}
+
+.heroInfo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 55%;
+    padding: 4rem 10vw 0;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+.heroHeader {
+    color: var(--accent);
+    font-size: 2rem;
+}
