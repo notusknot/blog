@@ -10,7 +10,17 @@
     --bg: #2e303e;
     --bg-mid: #393b4d;
     --bg-light: #44465c;
+    --cyan: #6be6e6;
+    --grey: #9699b7;
+    --red: #ec6a88;
+    --green: #3fdaa4;
+    --blue: #3fc6de;
+    --yellow: #efb993;
+    --magenta: #b072d1;
+
 }
+
+
 
 *,button,input {
     margin: 0;
@@ -34,10 +44,6 @@ span, p {
     text-decoration: none;
 }
 
-.k,.mi,.mf{color:#efb993}
-.nt,.nf,.nv,.n {color:#6be6e6}
-.kt {color:#3fdaa4}
-
 p, h1, h2, .highlight{
     background-color: var(--bg);
     width: 100%;
@@ -49,7 +55,7 @@ h1, h2 {
     color: var(--accent);
 }
 
-h1 { padding: 0 2rem !important; font-size: 1.75rem; }
+h1 { padding: 0 2rem !important;font-size: 1.75rem; }
 
 p, .highlight, ol {
     margin-bottom: 2.5rem;
@@ -108,16 +114,16 @@ main, .heroInfo  {
     text-align: center;
 }
 
-.previewTitle:before, .previewTitle:after { display: none; }
+.previewTitle:before, .previewTitle:after { display: none;}
 
-pre { overflow-x: auto; }
+pre { overflow-x: auto;}
 
 @media screen and (max-width: 700px) {
     h1, h2 {
         font-size: 1.35rem;
         padding: 1rem 0;
     }
-    p { font-size: 1.1rem; }
+    p { font-size: 1.1rem;}
 }
 @media screen and (max-width: 500px) {
     h1::before, h2::before {
@@ -149,9 +155,59 @@ h4 {
     font-size: 1.5rem;
 }
 
-.postsDesc { margin: 3rem 0 1rem; }
+.postsDesc { margin: 3rem 0 1rem;}
 
 .heroHeader {
     color: var(--accent);
     font-size: 2rem;
 }
+
+footer {
+    padding: 2rem 0;
+}
+
+/* Error */  .err { color: var(--red)}
+/* LineHighlight */  .hl { background-color: var(--bg)}
+/* LineNumbersTable */  .lnt { color: var(--gray)}
+/* LineNumbers */  .ln { color: var(--gray)}
+/* Keyword */  .k { color: var(--magenta); }
+/* KeywordConstant */  .kc { color: var(--yellow); }
+/* KeywordDeclaration */  .kd { color: var(--magenta); }
+/* KeywordNamespace */  .kn { color: var(--yellow); }
+/* KeywordPseudo */  .kp { color: var(--yellow); }
+/* KeywordReserved */  .kr { color: var(--yellow); }
+/* KeywordType */  .kt { color: var(--blue); }
+/* NameAttribute */  .na { color: #ff0000}
+/* NameBuiltin */  .nb { color: var(--blue); }
+/* Name */ .n { color: var(--cyan);}
+/* NameTag */  .nt {  }
+/* LiteralDate Yellow I think*/  .ld { color: #ff0000; }
+/* LiteralString */  .s { color: var(--green); }
+/* LiteralStringAffix */  .sa { color: var(--green); }
+/* LiteralStringBacktick */  .sb { color: var(--green); }
+/* LiteralStringChar */  .sc { color: var(--green); }
+/* LiteralStringDelimiter */  .dl { color: var(--green); }
+/* LiteralStringDoc */  .sd { color: var(--green); }
+/* LiteralStringDouble */  .s2 { color: var(--green); }
+/* LiteralStringEscape */  .se { color: var(--text); }
+/* LiteralStringHeredoc */  .sh { color: var(--green); }
+/* LiteralStringInterpol */  .si { color: var(--green); }
+/* LiteralStringOther */  .sx { color: var(--green); }
+/* LiteralStringRegex */  .sr { color: var(--green); }
+/* LiteralStringSingle */  .s1 { color: var(--green); }
+/* LiteralStringSymbol */  .ss { color: var(--green); }
+/* LiteralNumber */  .m { color: var(--orange); }
+/* LiteralNumberBin */  .mb { color: var(--orange); }
+/* LiteralNumberFloat */  .mf { color: var(--orange); }
+/* LiteralNumberHex */  .mh { color: var(--orange); }
+/* LiteralNumberInteger */  .mi { color: var(--orange); }
+/* LiteralNumberIntegerLong */  .il { color: var(--orange);  }
+/* LiteralNumberOct */  .mo { color: var(--orange); }
+/* Comment */  .c { color: var(--magenta)}
+/* CommentHashbang */  .ch { color: var(--magenta)}
+/* CommentMultiline */  .cm { color: var(--magents)}
+/* CommentSingle */  .c1 { color: var(--magenta)}
+/* CommentSpecial */  .cs { color: var(--magenta)}
+/* CommentPreproc */  .cp { color: var(--magenta); }
+/* CommentPreprocFile */  .cpf { color: var(--magenta); }
+/* GenericUnderline */  .gl { text-decoration: underline }

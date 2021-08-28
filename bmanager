@@ -3,11 +3,14 @@
 # Dont change these
 title="$2"
 blogFile="$3"
+blogFileContent=$(cat $blogFile)
 
 formattedTitle=$( echo "$title" | awk '{$1=toupper(substr($1,0,1))substr($1,2)}1' | tr '-' ' ' )
+date=$(date '+%B %d, %Y')
 templateFile=template.html # Your template file
 indexFile=index.html # Your index file (that lists all of the posts)
 blogDir=$(pwd) # The directory of your blog
+url="https://notusknot.com"
 
 setTemplate() { 
     echo "To use bmanager, you need to create a template file which includes things you want on every page, like a navbar or script tag.
@@ -24,12 +27,20 @@ newpost() {
                 r article.html
             }' bmanager.html # Replace bmanager tag with blog content
             mv bmanager.html "$blogDir"/posts/"$title"/index.html # Move file to proper location
+            sed -i "43 i <div class=\"articlePreview\"> <div class=\"info\"> <span class=\"date\">$date</span> <a href="/posts/"$title""><h2 class=\"previewTitle\">$formattedTitle</h2></a> </div> </div>" $indexFile
+
+            # RSS
+            temp="$(mktemp)";
+            echo "<item><title>$formattedTitle</title><guid>$url/posts/$title</guid><link>$url/posts/$title</link><pubDate>$date</pubDate><content type=\"html\">$blogFileContent</content></item>" > "$temp"
+            sed -i "/<!-- bmanager -->/r $temp" rss.xml
+            rm $temp
+
             # If the user wants to delete the article file, delete it
             read -erp "Do you want to delete your initial article file (the full page has already been added to your site) y/n " deleteArticle
             case "$deleteArticle" in
                 y) rm "$blogFile" ;; yes) rm "$blogFile" ;; n) true ;; no) true ;;
             esac
-            sed -i "17 i <div class=\"articlePreview\"> <div class=\"info\"> <span class=\"date\">$(date '+%B %d, %Y')</span> <a href="/posts/"$title""><h2 class=\"previewTitle\">$formattedTitle</h2></a> </div> </div>" $indexFile
+
         [ -e $templateFile ] || setTemplate # If there is no template file give them instructions
 }
 

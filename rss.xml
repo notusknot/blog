@@ -1,20 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Notusknot's blog; linux, programming, music, and whatever else I want">
-    <link rel="stylesheet" href="../../style.css">
-    <title>Notusknot's Website</title>
-</head>
-
-<body>
-    <header>
-        <h1><a href="/">Notusknot's Website</a></h1>
-    </header>
-    <main>
-        
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+        <title>Notusknot's website</title>
+        <link>https://notusknot.com</link>
+        <description>Notusknot's blog; linux, programming, music, and whatever else I want</description>
+        <language>en-us</language>
+    <!-- bmanager -->
+        <item><title>First article</title><guid>https://notusknot.com/posts/first-article</guid><link>https://notusknot.com/posts/first-article</link><pubDate>August 28, 2021</pubDate><content type="html">        
 <h2> How I made my website </h2>
 
 <p> 
@@ -58,17 +50,17 @@ and style them with CSS, but that's far from the best option... or is it?
 </p>
 
 <p> 
-Enter <a href="https://github.com/alecthomas/chroma">chroma.</a> Chroma is a Go program for doing generic
-syntax highlighting across many languages. The best part: you can export it to 
-nicely formatted HTML for ease of use with CSS! For example (this is the shell.nix for this very site):
+Enter <a href="https://pygments.org/">pygments.</a> Pygments is a Python program for doing generic
+syntax highlighting across several hundred different languages. The best part: you can export it to 
+nicely formatted HTML for ease of use with CSS! For example:
 </p>
-<div class="highlight">
-<pre><span class="k">with</span> <span class="kn">import</span> <span class="sr">&lt;nixpkgs&gt;</span> <span class="p">{</span> <span class="p">};</span>
+
+<div class="highlight"><pre><span></span><span class="k">with</span> <span class="kn">import</span> <span class="o">&lt;</span><span class="n">nixpkgs</span><span class="o">&gt;</span> <span class="p">{</span> <span class="p">};</span>
 
 <span class="n">mkShell</span> <span class="p">{</span>
     <span class="n">buildInputs</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="n">python39Packages</span><span class="o">.</span><span class="n">pygments</span>
         <span class="n">xclip</span>
-        <span class="n">chroma</span>
     <span class="p">];</span>
 <span class="p">}</span>
 </pre></div>
@@ -78,18 +70,18 @@ If you turn off JavaScript in your browser, you can see you still get syntax hig
 </p>
 
 <p> 
-Now, to use Chroma efficiently I decided to write a quick mapping in Neovim for a simple task. Here is the code snippet:
+Now, to use Pygments efficiently I decided to write a quick mapping in Neovim for a simple task. Here is the code snippet:
 </p>
 
-<div class="highlight"><pre><span class="n">map</span><span class="p">(</span><span class="s1">&#39;n&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;C-s&gt;&#39;</span><span class="p">,</span> <span class="s1">&#39;:!xclip -sel c -o | chroma --style="vim" --html | xclip -sel c &lt;CR&gt; &lt;CR&gt;&#39;</span><span class="p">,</span> <span class="n">options</span><span class="p">)</span>
-    </pre></div>
-
+<div class="highlight"><pre><span></span>map(&#39;n&#39;, &#39;&lt;C-s&gt;&#39;, &#39;:!xclip -sel c -o | pygmentize -f html | xclip -sel c &lt;CR&gt; &lt;CR&gt;&#39;, options)</pre></div>
 
 <p> 
 If you have a Lua configuration for Neovim, you can just drop that in. When you press Ctrl + S, it will 
 read the code from your clipboard, highlight it and convert to HTML, and then put it back in your clipboard
 so you can just paste it wherever you want.
-</p> <h2> How I made the site </h2>
+</p>
+
+<h2> How I made the site </h2>
 
 <p> 
 Well now that we have all that out of the way, how did I actually create the site?
@@ -131,10 +123,8 @@ will always keep it minimal, privacy-respecting, and FOSS.
 </p>
 
 <p> That's about it. Thank you for reading :) </p>
+</content>
+</item>
 
-    </main>
-</body>
-
-<footer> The code for this site is registered under the GPLv3 license, and the rest of the content is licensed under the CC-BY-SA.</footer>
-
-</html>
+    </channel>
+</rss>

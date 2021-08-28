@@ -1,0 +1,13 @@
+:root {
+    --text: #e3e6ee;
+    --cyan: #6be6e6;
+    --grey: #9699b7;
+    --red: #ec6a88;
+    --green: #3fdaa4;
+    --blue: #3fc6de;
+    --yellow: #efb993;
+    --magenta: #b072d1;
+    --bg: #2e303e;
+}
+
+body { background-color: #000 !important}
