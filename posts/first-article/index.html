@@ -4,27 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Notusknot's blog; featuring linux and programming tutorials and thoughts 🙂">
+    <meta name="description" content="Notusknot's blog; linux, programming, music, and whatever else I want">
     <link rel="stylesheet" href="../../style.css">
     <title>Notusknot's Website</title>
 </head>
 
 <body>
     <header>
-        <h1 class="headerInfo">Notusknot's Website</h1>
+        <h1><a href="/">Notusknot's Website</a></h1>
     </header>
     <main>
         
 <h2> How I made my website </h2>
 
-<p> I've wanted to make a website for a long time, and after some learning
+<p> 
+I've wanted to make a website for a long time, and after some learning
 and practice, that is finally a reality :). In my very first blog post, I'll
 go over the philosophy and ideas for this website, how I actually made it,
-and how you can make your own. </p>
+and how you can make your own.
+</p>
 
 <h2> Philosophy </h2>
 
-<p> First and foremost, I wanted this site to be minimal. I'm a fan of minimalism
+<p> 
+First and foremost, I wanted this site to be minimal. I'm a fan of minimalism
 in real life, and even more so when it comes to technology. As the ultimate challenge
 (it's not actually that difficult), I decided to make my site with absolutely 0 JavaScript
 and no external pings to other websites. I did this for a few reasons:
@@ -36,20 +39,29 @@ and no external pings to other websites. I did this for a few reasons:
     <li> No external pings makes the site load faster </li>
     <li> I don't like programming in JS </li>
     <li> It's just a fun challenge </li>
-</ol><p>
-So, how did I actually accomplish this?
-</p><p> 
+</ol>
+
+<p> So, how did I actually accomplish this? </p>
+
+<p> 
 Well, vanilla HTML and CSS are surprisingly powerful just on their own. The entire interface
 can easily be made with plain old HTML and CSS, which makes the site faster, more secure and
 easier to hack on than a massive site with a JavaScript framework. Now don't get me wrong;
-JavaScript is a very useful language, but it's simply not necessary for a site like mine.</p>
-<p> The only real technical challenge I encountered with this approach was syntax highlighting 
+JavaScript is a very useful language, but it's simply not necessary for a site like mine.
+</p>
+
+<p>
+The only real technical challenge I encountered with this approach was syntax highlighting 
 for code blocks. Most options out there are done with JS, which is probably the best way to do it
 but I needed to stick to my challenge. You can always add an insane amount of &lt;span&gt; tags everywhere
-and style them with CSS, but that's far from the best option... or is it? </p>
-<p> Enter <a href="https://pygments.org/">pygments.</a> Pygments is a Python program for doing generic
+and style them with CSS, but that's far from the best option... or is it?
+</p>
+
+<p> 
+Enter <a href="https://pygments.org/">pygments.</a> Pygments is a Python program for doing generic
 syntax highlighting across several hundred different languages. The best part: you can export it to 
-nicely formatted HTML for ease of use with CSS! For example:</p>
+nicely formatted HTML for ease of use with CSS! For example:
+</p>
 
 <div class="highlight"><pre><span></span><span class="k">with</span> <span class="kn">import</span> <span class="o">&lt;</span><span class="n">nixpkgs</span><span class="o">&gt;</span> <span class="p">{</span> <span class="p">};</span>
 
@@ -61,20 +73,65 @@ nicely formatted HTML for ease of use with CSS! For example:</p>
 <span class="p">}</span>
 </pre></div>
 
-<p> If you turn off JavaScript in your browser, you can see you still get syntax highlighting. Isn't that awesome?</p>
+<p> 
+If you turn off JavaScript in your browser, you can see you still get syntax highlighting. Isn't that awesome?
+</p>
 
-<p> Now, to use Pygments efficiently I decided to write a quick mapping in Neovim for a simple task.
-Here is the code snippet:</p>
+<p> 
+Now, to use Pygments efficiently I decided to write a quick mapping in Neovim for a simple task. Here is the code snippet:
+</p>
 
 <div class="highlight"><pre><span></span>map(&#39;n&#39;, &#39;&lt;C-s&gt;&#39;, &#39;:!xclip -sel c -o | pygmentize -f html | xclip -sel c &lt;CR&gt; &lt;CR&gt;&#39;, options)</pre></div>
 
-<p> If you have a Lua configuration for Neovim, you can just drop that in. When you press Ctrl + S, it will 
+<p> 
+If you have a Lua configuration for Neovim, you can just drop that in. When you press Ctrl + S, it will 
 read the code from your clipboard, highlight it and convert to HTML, and then put it back in your clipboard
-so you can just paste it wherever you want.</p>
+so you can just paste it wherever you want.
+</p>
 
-<h2> How I made the blog </h2>
+<h2> How I made the site </h2>
 
-<p> Well now that we have all that out of the way, how did I actually create the blog?
+<p> 
+Well now that we have all that out of the way, how did I actually create the site?
+As I said before, this site was designed to be minimal. I didn't use any sort of mockup program like Figma, I 
+just edited the design as I went along. For the HTML and CSS, I started out with a bare HTML template, figured out
+how to work in my static site generator, and adding the styling. Simple as that. The source code for the website can
+be found 
+    <a target="_blank" href="https://github.com/notusknot/notusknot.github.io">here</a>,
+if you want to look at it. 
+</p>
+
+<p> 
+The only unconventional thing I did to make the site was use a little static site generator that I wrote for myself
+called bmanager. Basically, it's a Bash script that copies some files into the correct places. But because of the way I've written
+it, the general workflow for writing a blog post goes something like:
+</p>
+
+<ol>
+    <li> Write an article.html file with the content of the blog </li>
+    <li> ./bmanager new title-of-post </li>
+    <li> Push changes to repo </li>
+</ol>
+
+<p>Pretty simple, huh?</p>
+
+<p> The source for bmanager can be found 
+    <a target="_blank" href="https://github.com/notusknot/notusknot.github.io/blob/main/bmanager">here.</a>
+</p>
+
+<h2> The future of the site </h2> 
+
+<p> 
+As of August 2021 (site's release), the site is of course functional, but there are still some things I would like
+to add to it. For one, I would like to be writing the posts in Markdown or 
+<a target="_blank" href="https://github.com/vhyrro/neorg">Neorg</a> with automatic conversions via
+<a target="_blank" href="https://github.com/jgm/pandoc">Pandoc</a>. I would also want to create an RSS feed, a
+TOR mirror, and maybe even a Gemini capsule. However I will never stray away from the intention of this site, and I
+will always keep it minimal, privacy-respecting, and FOSS.
+</p>
+
+<p> That's about it. Thank you for reading :) </p>
+
     </main>
 </body>
 

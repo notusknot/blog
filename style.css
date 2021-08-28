@@ -12,14 +12,13 @@
     --bg-light: #44465c;
 }
 
-strong {color: var(--accent)}
-
 *,button,input {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: var(--font);
     color: var(--text);
+    word-wrap: break-word;
 }
 
 body {
@@ -47,7 +46,6 @@ p, h1, h2, .highlight{
 
 h1, h2 {
     display:flex;
-    padding: 3rem 0 1.5rem;
     color: var(--accent);
 }
 
@@ -66,10 +64,11 @@ p, .highlight, ol {
 }
 header {
     width: 100%;
+    padding: 2rem 0;
 }
 
 .headerInfo:before, .headerInfo:after {
-    border-bottom: solid 3px;
+    text-decoration: underline;
 }
 
 .info {
@@ -87,7 +86,7 @@ h1:before, h1:after, h2:before, h2:after {
     border-radius: 5px;
 }
 
-main  {
+main, .heroInfo  {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -103,14 +102,15 @@ main  {
     flex-direction: column;
     align-items: center;
 }
-.previewTitle {
+.previewTitle, {
     color: var(--accent);
     padding: 0;
+    text-align: center;
 }
 
-pre {
-    overflow-x: scroll;
-}
+.previewTitle:before, .previewTitle:after { display: none; }
+
+pre { overflow-x: auto; }
 
 @media screen and (max-width: 700px) {
     h1, h2 {
@@ -133,26 +133,23 @@ ol, ul {
     width: 100%;
 }
 
+a {
+    text-decoration: none;
+    color: var(--accent)
+}
 
-* { word-wrap:break-word; }
+a:hover { text-decoration: underline }
 
 .heroChunk {
     padding-top: 2rem;
-}
-
-.heroInfo {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: start;
-    justify-content: center;
-    flex-direction: column;
-    max-width: 55%;
-    padding: 4rem 10vw 0;
+    width: 100%;
 }
 
 h4 {
     font-size: 1.5rem;
 }
+
+.postsDesc { margin: 3rem 0 1rem; }
 
 .heroHeader {
     color: var(--accent);
