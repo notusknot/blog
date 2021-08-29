@@ -27,7 +27,7 @@ newpost() {
                 r article.html
             }' bmanager.html # Replace bmanager tag with blog content
             mv bmanager.html "$blogDir"/posts/"$title"/index.html # Move file to proper location
-            sed -i "43 i <div class=\"articlePreview\"> <div class=\"info\"> <span class=\"date\">$date</span> <a href="/posts/"$title""><h2 class=\"previewTitle\">$formattedTitle</h2></a> </div> </div>" $indexFile
+            sed -i "52 i <div class=\"articlePreview\"> <div class=\"info\"> <span class=\"date\">$date</span> <a href="/posts/"$title""><h2 class=\"previewTitle\">$formattedTitle</h2></a> </div> </div>" $indexFile
 
             # RSS
             temp="$(mktemp)";
