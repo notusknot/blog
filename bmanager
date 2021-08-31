@@ -7,7 +7,7 @@ blogFileContent=$(cat $blogFile)
 
 formattedTitle=$( echo "$title" | awk '{$1=toupper(substr($1,0,1))substr($1,2)}1' | tr '-' ' ' )
 date=$(date '+%B %d, %Y')
-templateFile=template.html # Your template file
+templateFile=assets/template.html # Your template file
 indexFile=index.html # Your index file (that lists all of the posts)
 blogDir=$(pwd) # The directory of your blog
 url="https://notusknot.com"
