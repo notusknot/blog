@@ -1,7 +1,8 @@
+
 :root {
     --accent: #ec6a88;
     --text: #e3e6ee;
-    --font: JetBrains Mono;
+    --font: JetBrains Mono, monospace;
     --bg: #2e303e;
     --bg-mid: #393b4d;
     --bg-light: #44465c;
