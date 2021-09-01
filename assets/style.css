@@ -1,8 +1,13 @@
 
+@font-face {
+    font-family: 'jetbrains-mono';
+    src: url('jetbrains-mono.regular.ttf') format('truetype');
+}
+
 :root {
     --accent: #ec6a88;
     --text: #e3e6ee;
-    --font: JetBrains Mono, monospace;
+    --font: jetbrains-mono, serif;
     --bg: #2e303e;
     --bg-mid: #393b4d;
     --bg-light: #44465c;
@@ -34,7 +39,7 @@ body {
 }
 
 span, p {
-    font-size: 19px;
+    font-size: 1.1rem;
     text-decoration: none;
 }
 
@@ -46,10 +51,11 @@ p, h1, h2, .highlight{
 
 h1, h2 {
     display:flex;
+    padding: 1rem 0;
     color: var(--accent);
 }
 
-h1 { padding: 0 2rem !important;font-size: 1.75rem; }
+h1 { padding: 0 2rem !important;font-size: 1.3rem; }
 
 p, .highlight, ol {
     margin-bottom: 2.5rem;
@@ -67,7 +73,7 @@ header {
     width: 100%;
 }
 
-header a { font-size:1.4rem; padding-right: 1rem; background-color: var(--bg) }
+header a { font-size:1.3rem; padding-right: 1rem; background-color: var(--bg) }
 
 .headerInfo:before, .headerInfo:after {
     text-decoration: underline;
@@ -123,8 +129,7 @@ pre { overflow-x: auto;}
 
 @media screen and (max-width: 700px) {
     h1, h2 {
-        font-size: 1.35rem;
-        padding: 1rem 0;
+        font-size: 1.3rem;
     }
     p { font-size: 1.1rem;}
 }
@@ -155,7 +160,7 @@ a:hover { text-decoration: underline }
 }
 
 h4 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 .h3 { 
@@ -174,7 +179,7 @@ video {
 
 .heroHeader {
     color: var(--accent);
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 footer {
