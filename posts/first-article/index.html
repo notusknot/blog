@@ -11,13 +11,13 @@
 
 <body>
     <header>
-        <a href="/">Home</a><a href="/videos">Videos</a><a href="/rss.xml">Feed</a><div class="line"></div>
+        <a href="/">Home</a><a href="/videos">Videos</a><a href="/rss.xml">Feed</a><a href="/crypto">Crypto</a><div class="line"></div>
     </header>
     <main>
         
 <h2> How I made my website </h2>
 
-<p> 
+<p class="articleP"> 
 I've wanted to make a website for a long time, and after some learning
 and practice, that is finally a reality :). In my very first blog post, I'll
 go over the philosophy and ideas for this website, how I actually made it,
@@ -26,7 +26,7 @@ and how you can make your own.
 
 <h2> Philosophy </h2>
 
-<p> 
+<p class="articleP"> 
 First and foremost, I wanted this site to be minimal. I'm a fan of minimalism
 in real life, and even more so when it comes to technology. As the ultimate challenge
 (it's not actually that difficult), I decided to make my site with absolutely 0 JavaScript
@@ -41,23 +41,23 @@ and no external pings to other websites. I did this for a few reasons:
     <li> It's just a fun challenge </li>
 </ol>
 
-<p> So, how did I actually accomplish this? </p>
+<p class="articleP"> So, how did I actually accomplish this? </p>
 
-<p> 
+<p class="articleP"> 
 Well, vanilla HTML and CSS are surprisingly powerful just on their own. The entire interface
 can easily be made with plain old HTML and CSS, which makes the site faster, more secure and
 easier to hack on than a massive site with a JavaScript framework. Now don't get me wrong;
 JavaScript is a very useful language, but it's simply not necessary for a site like mine.
 </p>
 
-<p>
+<p class="articleP"> 
 The only real technical challenge I encountered with this approach was syntax highlighting 
 for code blocks. Most options out there are done with JS, which is probably the best way to do it
 but I needed to stick to my challenge. You can always add an insane amount of &lt;span&gt; tags everywhere
 and style them with CSS, but that's far from the best option... or is it?
 </p>
 
-<p> 
+<p class="articleP"> 
 Enter <a href="https://github.com/alecthomas/chroma">chroma.</a> Chroma is a Go program for doing generic
 syntax highlighting across many languages. The best part: you can export it to 
 nicely formatted HTML for ease of use with CSS! For example (this is the shell.nix for this very site):
@@ -73,7 +73,7 @@ nicely formatted HTML for ease of use with CSS! For example (this is the shell.n
 <span class="p">}</span>
 </pre></div>
 
-<p> 
+<p class="articleP"> 
 If you turn off JavaScript in your browser, you can see you still get syntax highlighting. Isn't that awesome?
 </p>
 
