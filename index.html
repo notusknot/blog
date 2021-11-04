@@ -7,6 +7,8 @@
     <meta name="description" content="Notusknot's blog; linux, programming, music, and whatever else I want">
     <link rel="stylesheet" href="./assets/style.css"> <link rel="shortcut icon" type="image/jpg" href="./assets/image.jpg"/>
     <title>Notusknot's Website</title>
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color">
 </head>
 
 <body>
@@ -62,6 +64,11 @@
             </div>
         </div>
 </body>
+<script>
+    if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js');
+        }
+</script>
 
 <footer> The code for this site is registered under the GPLv3 license, and the rest of the content is licensed under the CC-BY-SA.</footer>
 </html>
