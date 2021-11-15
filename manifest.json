@@ -1,9 +1,0 @@
-{
-    "name": "notusknot's crypto tracker",
-    "short_name": "crypto",
-    "start_url":"/crypto",
-    "theme_color": "#ec6a88",
-    "background_color": "#2e303e",
-    "display": "fullscreen",
-    "orientation": "portrait"
-}

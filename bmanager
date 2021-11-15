@@ -3,7 +3,7 @@
 # Dont change these
 title="$2"
 blogFile="$3"
-blogFileContent=$(cat $blogFile)
+blogFileContent=$(cat "$blogFile")
 
 formattedTitle=$( echo "$title" | awk '{$1=toupper(substr($1,0,1))substr($1,2)}1' | tr '-' ' ' )
 date=$(date '+%B %d, %Y')
@@ -27,13 +27,13 @@ newpost() {
                 r article.html
             }' bmanager.html # Replace bmanager tag with blog content
             mv bmanager.html "$blogDir"/posts/"$title"/index.html # Move file to proper location
-            sed -i "61 i <div class=\"articlePreview\"> <div class=\"info\"> <span class=\"date\">$date</span> <a href="/posts/"$title""><h2 class=\"previewTitle\">$formattedTitle</h2></a> </div> </div>" $indexFile
+            sed -i "22 i <div class=\"articlePreview\"> <div class=\"info\"> <span class=\"date\">$date</span> <a href="/posts/"$title""><h2 class=\"previewTitle\">$formattedTitle</h2></a> </div> </div>" $indexFile
 
             # RSS
             temp="$(mktemp)";
             echo "<item><title>$formattedTitle</title><guid>$url/posts/$title</guid><link>$url/posts/$title</link><pubDate>$date</pubDate><content type=\"html\">$blogFileContent</content></item>" > "$temp"
             sed -i "/<!-- bmanager -->/r $temp" rss.xml
-            rm $temp
+            rm "$temp"
 
             # If the user wants to delete the article file, delete it
             read -erp "Do you want to delete your initial article file (the full page has already been added to your site) y/n " deleteArticle

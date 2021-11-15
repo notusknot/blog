@@ -7,13 +7,11 @@
     <meta name="description" content="Notusknot's blog; linux, programming, music, and whatever else I want">
     <link rel="stylesheet" href="./assets/style.css"> <link rel="shortcut icon" type="image/jpg" href="./assets/image.jpg"/>
     <title>Notusknot's Website</title>
-    <link rel="manifest" href="./manifest.json">
-    <meta name="theme-color"> <meta name="apple-mobile-web-app-status-bar-style" content="black-traslucent">
 </head>
 
 <body>
     <header>
-        <a href="/">Home</a><a href="/videos">Videos</a><a href="/rss.xml">Feed</a><a href="/crypto">Crypto</a><div class="line"></div>
+        <a href="/">Home</a><a href="/rss.xml">Feed</a><a href="/crypto">Crypto</a><div class="line"></div>
     </header>
 
     <div class="heroInfo">
@@ -21,6 +19,7 @@
         <h3 class="heroHeader"> Hey, I'm notusknot</h3>
         <h4 class="postsDesc"> Here are some of my posts: </h4>
         <main>
+<div class="articlePreview"> <div class="info"> <span class="date">November 14, 2021</span> <a href=/posts/software-i-use><h2 class="previewTitle">Software I use</h2></a> </div> </div>
             <div class="articlePreview"> <div class="info"> <span class="date">July 31, 2021</span> <a href=/posts/first-article><h2 class="previewTitle">First article</h2></a> </div> </div>
         </main>
         <div class="heroChunk">
@@ -64,11 +63,5 @@
             </div>
         </div>
 </body>
-<script>
-    if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js');
-        }
-</script>
-
 <footer> The code for this site is registered under the GPLv3 license, and the rest of the content is licensed under the CC-BY-SA.</footer>
 </html>
