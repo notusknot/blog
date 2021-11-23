@@ -6,7 +6,7 @@
         <description>Notusknot's blog; linux, programming, music, and whatever else I want</description>
         <language>en-us</language>
     <!-- bmanager -->
-<item><title>Software i use</title><guid>https://notusknot.com/posts/software-i-use</guid><link>https://notusknot.com/posts/software-i-use</link><pubDate>November 14, 2021</pubDate><content type="html"><h1> Software I use </h1>
+<item><title>Software i use</title><guid>https://notusknot.com/posts/software-i-use</guid><link>https://notusknot.com/posts/software-i-use</link><pubDate>November 14, 2021</pubDate><description><h1> Software I use </h1>
 
 <h2> Operating system </h2>
 
@@ -58,11 +58,8 @@ I tend to go for stuff that follows the Unix philosophy: do one thing, and do it
             higher security than exchanges like Coinbase. </li>
         <li> Other stuff: mpv for videos, zathura for PDFs, and newsboat for RSS feeds. I don't use these very often though. </li>
     </ul>
-</p></content></item>
-<item><title>Article.html</title><guid>https://notusknot.com/posts/article.html</guid><link>https://notusknot.com/posts/article.html</link><pubDate>November 14, 2021</pubDate><content type="html"></content></item>
-<item><title>Article.html</title><guid>https://notusknot.com/posts/article.html</guid><link>https://notusknot.com/posts/article.html</link><pubDate>November 14, 2021</pubDate><content type="html"></content></item>
-<item><title></title><guid>https://notusknot.com/posts/</guid><link>https://notusknot.com/posts/</link><pubDate>November 14, 2021</pubDate><content type="html"></content></item>
-        <item><title>First article</title><guid>https://notusknot.com/posts/first-article</guid><link>https://notusknot.com/posts/first-article</link><pubDate>August 28, 2021</pubDate><content type="html">        
+</p></description></item>
+        <item><title>First article</title><guid>https://notusknot.com/posts/first-article</guid><link>https://notusknot.com/posts/first-article</link><pubDate>August 28, 2021</pubDate><description>        
 <h2> How I made my website </h2>
 
 <p> 
@@ -179,7 +176,7 @@ will always keep it minimal, privacy-respecting, and FOSS.
 </p>
 
 <p> That's about it. Thank you for reading :) </p>
-</content>
+</description>
 </item>
 
     </channel>
