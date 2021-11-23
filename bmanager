@@ -31,7 +31,7 @@ newpost() {
 
             # RSS
             temp="$(mktemp)";
-            echo "<item><title>$formattedTitle</title><guid>$url/posts/$title</guid><link>$url/posts/$title</link><pubDate>$date</pubDate><description>$blogFileContent</description></item>" > "$temp"
+            echo "<item><title>$formattedTitle</title><guid>$url/posts/$title</guid><link>$url/posts/$title</link><pubDate>$date</pubDate><description><![CDATA[ $blogFileContent ]]></description></item>" > "$temp"
             sed -i "/<!-- bmanager -->/r $temp" rss.xml
             rm "$temp"
 
