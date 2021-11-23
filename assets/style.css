@@ -39,7 +39,7 @@ body {
 }
 
 span, p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-decoration: none;
 }
 
@@ -55,7 +55,7 @@ h1, h2 {
     color: var(--accent);
 }
 
-h1 { padding: 0 2rem !important;font-size: 1.3rem; }
+h1 { padding: 0 2rem !important;font-size: 1.25rem; }
 
 p, .highlight, ol {
     margin-bottom: 2.5rem;
@@ -73,7 +73,7 @@ header {
     width: 100%;
 }
 
-header a { font-size:1.3rem; padding-right: 1rem; background-color: var(--bg) }
+header a { font-size:1.25rem; padding-right: 1rem; background-color: var(--bg) }
 
 .headerInfo:before, .headerInfo:after {
     text-decoration: underline;
@@ -135,9 +135,9 @@ pre {
 
 @media screen and (max-width: 700px) {
     h1, h2 {
-        font-size: 1.3rem;
+        font-size: 1.25rem;
     }
-    p { font-size: 1.1rem;}
+    p { font-size: 1rem;}
 }
 @media screen and (max-width: 500px) {
     h1::before, h2::before {
@@ -166,7 +166,7 @@ a:hover { text-decoration: underline }
 }
 
 h4 {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
 }
 
 .h3 { 
