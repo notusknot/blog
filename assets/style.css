@@ -138,6 +138,7 @@ pre {
     h1, h2 { font-size: 1.25rem; }
     p { font-size: 1rem;}
     ul { padding: 1rem; }
+    p, li { text-indent: 25px; }
 }
 @media screen and (max-width: 500px) {
     h1::before, h2::before { display: none; }
