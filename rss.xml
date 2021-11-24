@@ -86,10 +86,8 @@ and no external pings to other websites. I did this for a few reasons:
     <li> It's just a fun challenge </li>
 </ol>
 
-<p> So, how did I actually accomplish this? </p>
-
 <p> 
-Well, vanilla HTML and CSS are surprisingly powerful just on their own. The entire interface
+So, how did I actually accomplish this? Well, vanilla HTML and CSS are surprisingly powerful just on their own. The entire interface
 can easily be made with plain old HTML and CSS, which makes the site faster, more secure and
 easier to hack on than a massive site with a JavaScript framework. Now don't get me wrong;
 JavaScript is a very useful language, but it's simply not necessary for a site like mine.

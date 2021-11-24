@@ -43,7 +43,7 @@ span, p {
     text-decoration: none;
 }
 
-p, h1, h2, .highlight{
+h1, h2, li, p, .highlight{
     background-color: var(--bg);
     width: 100%;
     line-height:1.6;
@@ -51,14 +51,15 @@ p, h1, h2, .highlight{
 
 h1, h2 {
     display:flex;
-    padding: 0 0 1rem 0;
+    padding: .5rem, 0;
     color: var(--accent);
 }
 
-h1 { padding: 0 2rem !important;font-size: 1.25rem; }
+h1, h2 { width: calc(100% + 3rem); font-size: 1.25rem; }
 
-p, .highlight, ol {
-    margin-bottom: 2.5rem;
+p {
+    padding: 1rem 0;
+    text-indent: 3rem;
 }
 
 .highlight {
@@ -73,7 +74,7 @@ header {
     width: 100%;
 }
 
-header a { font-size:1.25rem; padding-right: 1rem; background-color: var(--bg) }
+header a { color: var(--accent); font-size:1.25rem; padding-right: 1rem; background-color: var(--bg) }
 
 .headerInfo:before, .headerInfo:after {
     text-decoration: underline;
@@ -134,28 +135,27 @@ pre {
 }
 
 @media screen and (max-width: 700px) {
-    h1, h2 {
-        font-size: 1.25rem;
-    }
+    h1, h2 { font-size: 1.25rem; }
     p { font-size: 1rem;}
+    ul { padding: 1rem; }
 }
 @media screen and (max-width: 500px) {
-    h1::before, h2::before {
-        display: none;
-    }
-    h2 {
-        margin: 0;
-    }
+    h1::before, h2::before { display: none; }
+    h1, h2 { width: 100%; }
+    h2 { margin: 0; }
 }
 
 ol, ul {
-    padding-left: 2rem;
     width: 100%;
+    list-style-position: inside;
+    list-style: none;
 }
+
+li { padding: 0.35rem 0; }
 
 a {
     text-decoration: none;
-    color: var(--accent)
+    color: #f4a9bb;
 }
 
 a:hover { text-decoration: underline }
@@ -175,13 +175,6 @@ h4 {
 }
 
 .postsDesc { margin: 3rem 0 1rem;}
-.vidDesc { text-align: center; }
-
-video {
-    margin: 0 3rem 3rem;
-    max-width: 480px;
-    width: 100%;
-}
 
 .heroHeader {
     color: var(--accent);
