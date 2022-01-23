@@ -20,5 +20,5 @@ jobs:
         with:
           commit_message: 'Minified code'
           branch: gh-pages
-          push-options: '--force'
-          skip-checkout: true
+          push_options: '--force'
+          skip_checkout: true
