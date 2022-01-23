@@ -1,7 +1,8 @@
+on: push
+
 jobs:
   test:
     runs-on: ${{ matrix.os }}
-
     strategy:
       fail-fast: false
       matrix:
