@@ -1,13 +1,7 @@
-
-@font-face {
-    font-family: 'jetbrains-mono';
-    src: url('jetbrains-mono.regular.ttf') format('truetype');
-}
-
 :root {
     --accent: #ec6a88;
     --text: #e3e6ee;
-    --font: jetbrains-mono, serif;
+    --font: courier new, courier, monospace;
     --bg: #2e303e;
     --bg-mid: #393b4d;
     --bg-light: #44465c;
