@@ -1,7 +1,8 @@
 name: Minify Workflow
-on: 
+on:
   push:
     branches: [ main ]
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -11,13 +12,12 @@ jobs:
         with:
           ref: ${{ github.ref }}
 
-      - name: Minify Action
-        uses: anthonyftwang/minify-action@v1.0.1
-
+      # Job for Minify-JS
+      - name: Minify-JS Action
+        uses: jossydevers/minify-js@v1.0.0
+          
       # Auto-commit to repository
-      - uses: stefanzweifel/git-auto-commit-action@v4.3.0
+      - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Minify source code
-          ref: production 
-          push_options: --force
-
+          commit_message: 'Minify-JS : Commit Pipeline'
+          branch: prod
