@@ -1,7 +1,8 @@
 :root {
     --accent: #ec6a88;
+    --accent: #e95678;
     --text: #e3e6ee;
-    --font: monaco, monospace, courier new, courier;
+    --font: sf mono, monaco, monospace, courier new, courier;
     --bg: #2e303e;
     --bg-mid: #393b4d;
     --bg-light: #44465c;
