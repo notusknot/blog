@@ -1,0 +1,13 @@
+name: Minify Workflow
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: script
+    run: ./.github/workflows/commit.sh
+    shell: bash
