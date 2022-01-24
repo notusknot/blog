@@ -6,7 +6,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.actor != 'notusknot'
+    if: github.actor == 'notusknot'
     steps:
       # Checks-out your repository
       - uses: actions/checkout@v2
