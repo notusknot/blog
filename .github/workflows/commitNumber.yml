@@ -4,9 +4,9 @@ on:
     branches: [ main ]
 
 jobs:
-  if: github.actor != notusknot
   run:
     runs-on: ubuntu-latest
+    if: github.actor != 'notusknot'
     steps:
       - uses: actions/checkout@v1
       - name: script
