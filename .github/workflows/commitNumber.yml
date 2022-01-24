@@ -4,7 +4,7 @@ on:
     branches: [ main ]
 
 jobs:
-  if: github.actor != 'notusknot'
+  if: github.actor != notusknot
   run:
     runs-on: ubuntu-latest
     steps:
