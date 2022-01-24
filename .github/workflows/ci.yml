@@ -6,6 +6,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: github.actor != 'notusknot'
     steps:
       # Checks-out your repository
       - uses: actions/checkout@v2
@@ -14,6 +15,10 @@ jobs:
 
       - name: Minify Action
         uses: anthonyftwang/minify-action@v1.0.1
+
+      - name: Run Update Script 
+        run: ./.github/workflows/commit.sh
+        shell: bash
 
       # Auto-commit to repository
       - uses: stefanzweifel/git-auto-commit-action@v4
