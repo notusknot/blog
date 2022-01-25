@@ -1,19 +1,13 @@
 :root {
     --accent: #ec6a88;
-    --accent: #e95678;
     --text: #e3e6ee;
-    --font: sf mono, monaco, monospace, courier new, courier;
     --bg: #2e303e;
-    --bg-mid: #393b4d;
-    --bg-light: #44465c;
-    --grey: #9699b7;
-    --blue: #3fc6de
 }
 
 body {
     background: var(--bg);
     color: var(--text);
-    font-family: var(--font);
+    font-family: monospace;
     text-transform: lowercase;
     display: grid;
     padding-top: 2rem;
@@ -46,17 +40,13 @@ header a {
     margin: .5rem 0 1.5rem
 }
 
-pre,ul {
-    margin: 0
-}
-
 ul {
-    padding: .6rem 0 0 1.1rem
+    padding: .6rem 0 0 1.1rem;
+    margin: 0
 }
 
 li {
     padding: .3rem 0;
-    word-wrap: break-word
 }
 
 .heroDesc {
@@ -66,24 +56,6 @@ li {
 .heroHeader {
     text-align: center
 }
-
-.postList {
-    margin: auto 0
-}
-
-.highlight {
-    border: 1px solid var(--bg-light);
-    background-color: var(--bg-mid);
-    padding: 1.5rem;
-    border-radius: 10px;
-    align-self: start;
-    font-size: 1rem
-}
-
-pre {
-    overflow-x: auto
-}
-
 ::-webkit-scrollbar {
     background-color: var(--bg);
     width: 10px

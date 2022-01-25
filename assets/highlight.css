@@ -13,6 +13,19 @@
     --magenta: #b072d1;
 }
 
+.highlight {
+    border: 1px solid var(--bg-light);
+    background-color: var(--bg-mid);
+    padding: 1.5rem;
+    border-radius: 10px;
+    align-self: start;
+    font-size: 1rem
+}
+
+pre {
+    overflow-x: auto
+}
+
 /* Error */  .err { color: var(--red)}
 /* LineHighlight */  .hl { background-color: var(--bg)}
 /* LineNumbersTable */  .lnt { color: var(--gray)}
