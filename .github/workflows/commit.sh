@@ -4,4 +4,4 @@ URL="https://github.com/notusknot/notusknot.gihub.io/commit/$COMMIT"
 MESSAGE="Powered by git commit $COMMIT.</a>"
 
 sed -i "s#Powered by git commit.*.</a>#$MESSAGE#g" ./index.html
-sed -i "s#notusknot.github.io/commit/.*\">#notusknot.github.io/commit/$COMMIT\">#g" ./index.html
+sed -i "s#notusknot.github.io/commit/.*\>#notusknot.github.io/commit/$COMMIT\>#g" ./index.html
