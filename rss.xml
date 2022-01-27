@@ -6,6 +6,21 @@
         <description>Notusknot's blog; linux, programming, music, and whatever else I want</description>
         <language>en-us</language>
     <!-- bmanager -->
+<item><title>Overengineering to perfection</title><guid>https://notusknot.com/posts/overengineering-to-perfection</guid><link>https://notusknot.com/posts/overengineering-to-perfection</link><pubDate>January 26, 2022</pubDate><description><![CDATA[ # Overengineering this site to perfection
+
+So I've written on here before how I made this site and the philosophy behind it, but recently I've made some changes that I want to detail here. I discovered the [512kb.club](https://512kb.club), which is a cool website listing a bunch of sites who's homepage is under 512kb (mine included). When I found it, my homepage was around 10.5kb, and the site inspired me to minimize it to an even smaller size, which I did. This sent me down a long rabbit hole of minification, GitHub Actions, and optimizing every byte of code. 
+
+I started off completely rewriting my CSS, and got it down from about 4kb to less than 1. I used some trickery like splitting the highlight code, which was worth nearly 3kb on its own, into a seperate highlight.css file, since it's not necessary for every single page. I also just removed a bunch of old stuff that wasn't necessary anymore, which definetely helped. 
+
+Next off, I wanted to add some minification to make sure every file was as small as possible. However, this raised the issue of editing minified files; by definition, they are not made for humans to edit and read. So how did I solve this?
+
+## Github Actions
+
+I was really surprised with how awesome GitHub Actions (and just DevOps in general) is. The Github free plan allowed me to spin up a server for free and automatically run repetitive tasks, like minification of my HTML and CSS. I also set up a [simple script](https://github.com/notusknot/notusknot.github.io/blob/main/.github/workflows/commit.sh) to automatically update the commit at the bottom of the page with a link to the respective commit on GitHub. Completely useless, but I love it.
+
+## Conclusion
+
+And yeah, that's it pretty much. I don't have much else to say other than the site is now better, and DevOps is cool. ]]></description></item>
 <item><title>New years resolutions</title><guid>https://notusknot.com/posts/new-years-resolutions</guid><link>https://notusknot.com/posts/new-years-resolutions</link><pubDate>December 21, 2021</pubDate><description><![CDATA[ <h1> My New Year's resolutions </h1>
 
 <p> So I've been on a self-improvement journey for a while now. As the new year comes soon, I want to set realistic, achievable goals

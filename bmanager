@@ -10,6 +10,7 @@ date=$(date '+%B %d, %Y')
 templateFile=assets/template.html # Your template file
 indexFile=index.html # Your index file (that lists all of the posts)
 blogDir=$(pwd) # The directory of your blog
+compiler=lowdown # Markdown compiler, delete variable if none
 url="https://notusknot.com"
 
 setTemplate() { 
@@ -20,6 +21,7 @@ setTemplate() {
 
 newpost() { 
         [ -e $templateFile ] &&
+            $compiler article.md > article.html
             mkdir -p "$blogDir"/posts/"$title"/ # Creates the directory for the new post
             cp $templateFile bmanager.html || setTemplate # Copy the template file to temporary file
             sed -i '/<!--bmanager-->/{
