@@ -38,6 +38,6 @@ jobs:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           password: ${{ secrets.PASSWORD }}
-          source: "/"
+          source: "."
           overwrite: true
           target: "${{ secrets.REMOTE_DIR }}"
