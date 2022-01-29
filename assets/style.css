@@ -7,10 +7,10 @@
 body {
     background: var(--bg);
     color: var(--text);
-    font-family: monospace;
-    text-transform: lowercase;
+    font-family: "JetBrains Mono", liberation mono,monospace;
     display: grid;
-    padding-top: 2rem;
+    margin: 1rem;
+    font-size: 15px;
     grid-template-columns: 1fr min(65ch,100%) 1fr
 }
 
@@ -18,12 +18,13 @@ body>* {
     grid-column: 2
 }
 
+
 a,h1,h2 {
     color: var(--accent)
 }
 
-h1,h2,header a,p {
-    font-size: 1rem
+h1,h2,h3,a,p {
+    font-size: 15px;
 }
 
 header {
@@ -49,19 +50,18 @@ li {
     padding: .3rem 0;
 }
 
-.heroDesc {
+h3 {
     margin: 3rem 0 0
 }
 
 .heroHeader {
     text-align: center
 }
+
 ::-webkit-scrollbar {
     background-color: var(--bg);
-    width: 10px
 }
 
 ::-webkit-scrollbar-thumb {
     background-color: var(--bg-light);
-    -webkit-border-radius: 10px
 }

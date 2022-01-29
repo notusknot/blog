@@ -27,3 +27,17 @@ jobs:
           branch: gh-pages
           push_options: '--force'
           skip_checkout: true
+
+      - uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+
+      - name: Copying files to server
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          password: ${{ secrets.PASSWORD }}
+          source: "/"
+          overwrite: true
+          target: "${{ secrets.REMOTE_DIR }}"
