@@ -23,7 +23,8 @@
 }
 
 pre {
-    overflow-x: auto
+    overflow-x: auto;
+    margin: 0; 
 }
 
 /* Error */  .err { color: var(--red)}
