@@ -32,12 +32,13 @@ jobs:
         with:
           ref: gh-pages
 
-      - name: Copying files to server
-        uses: appleboy/ssh-action@master
+      - name: rsync deployments
+        uses: burnett01/rsync-deployments@5.2
         with:
-          host: ${{ secrets.REMOTE_HOST }}
-          username: ${{ secrets.REMOTE_USER }}
-          password: ${{ secrets.PASSWORD }}
-          source: "."
-          overwrite: true
-          target: "${{ secrets.REMOTE_DIR }}"
+          switches: -rtvzP
+          remote_path: ${{ secrets.REMOTE_PATH}}
+          remote_host: ${{ secrets.REMOTE_HOST}}
+          remote_user: ${{ secrets.REMOTE_USER}}
+          remote_key: ${{ secrets.SSH_KEY}}
+          remote_key_pass: ${{ secrets.SSH_KEY_PASSPHRASE}}
+
