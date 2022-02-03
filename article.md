@@ -6,8 +6,6 @@
 
 This wasn't my first time meditating. For the past 2 or so years I've been meditating on and off, both with guided meditations online and just by myself. I had enjoyed it before, but hadn't seen the massive benefits that I had heard about, so I never got it to stick past a month. There are a few reasons, that I know now, on why I failed these previous times, which I'll get more into later.
 
-## Meditation benefits
-
 ## This month
 
 I recently have been reading a lot on self-improvement, discipline, time-management, and most importantly, habit formation. Atomic Habits by James Clear and The Power of Habit by Charles Duhigg (both great books you should read) detail how habits are formed, how powerful they are, and how to cultivate good ones and break bad ones. Using the knowledge I got from them, I set myself up for success this month with a few small, but vital changes to my previous routine. 
