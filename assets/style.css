@@ -62,12 +62,12 @@ header, footer {
 }
 
 .posts {
-    width: 300px;
     flex: 1;
 }
 
 .info {
-    width: 400px;
+    min-width: 300px;
+    overflow-wrap: break-word;
     flex: 2;
 }
 
