@@ -1,7 +1,7 @@
 :root {
-    --text: #e3e6ee;
-    --bg: #2e303e;
-    --bg-mid: #393b4d;
+    --text: #d9e0ee;
+    --bg: #292a37;
+    --bg-mid: #303241;
     --red: #ec6a88;
     --green: #3fdaa4;
     --blue: #3fc6de;
@@ -36,6 +36,8 @@ a {
     color: var(--blue);
     text-decoration: none;
 }
+
+a:hover { color: var(--green); text-decoration: underline}
 
 ul { padding: 0 1rem;}
 
