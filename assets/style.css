@@ -77,3 +77,25 @@ header, footer {
 
 .posts div { margin: 1rem 0;}
 
+#summary {
+  display: inline-block;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+}
+
+#detail {
+    display:none;
+  width: 25rem;
+  padding: 1rem;
+  border-radius: 8px;
+  position: absolute;
+  top: 16rem;
+  left: 0;
+  margin: 0 calc(50vw - 35ch);
+  background-color: var(--bg-mid);
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+#summary:hover + #detail {
+    display:block;
+}
