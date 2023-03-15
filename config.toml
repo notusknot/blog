@@ -1,0 +1,21 @@
+baseURL = 'https://notusknot.com/'
+languageCode = 'en-us'
+title = "notusknot's site"
+
+[markup.goldmark.renderer]
+  # to enable raw html in markdown
+  unsafe= true
+
+[params]
+  relatedtext = "Related"
+  favicon = "/favicon.ico"
+
+  #list items
+  datesinlist = true
+
+  #footer items
+  nextprev = true
+  taglist = true
+  showrss = true
+
+  separator = "::"

@@ -1,0 +1,13 @@
+<nav>
+	<ul>
+		{{- $sec := .Page.Section }}{{ with .File }}{{ .TranslationBaseName }}{{ end
+		}} {{ range.Site.Menus.main.ByWeight }}{{ $base := path.Base .URL }}
+		<li>
+			<a href="{{ .URL }}"
+				><span class="pre">{{ .Pre }}</span
+				><span class="menuname">{{ .Name }}</span></a
+			>
+		</li>
+		{{- end }}
+	</ul>
+</nav>
