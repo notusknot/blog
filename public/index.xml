@@ -1,22 +1,3 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>notusknot&#39;s site</title>
-    <link>https://notusknot.com/</link>
-    <description>Recent content on notusknot&#39;s site</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 12 Mar 2023 11:51:42 -0700</lastBuildDate><atom:link href="https://notusknot.com/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>My second first post</title>
-      <link>https://notusknot.com/second-first/</link>
-      <pubDate>Sun, 12 Mar 2023 12:04:17 -0700</pubDate>
-      
-      <guid>https://notusknot.com/second-first/</guid>
-      <description>Today (March 12th, 2023), I rewrote my blog using the Hugo static site generator.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>notusknot's site</title><link>https://notusknot.com/</link><description>Recent content on notusknot's site</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 12 Mar 2023 11:51:42 -0700</lastBuildDate><atom:link href="https://notusknot.com/index.xml" rel="self" type="application/rss+xml"/><item><title>My second first post</title><link>https://notusknot.com/second-first/</link><pubDate>Sun, 12 Mar 2023 12:04:17 -0700</pubDate><guid>https://notusknot.com/second-first/</guid><description>Today (March 12th, 2023), I rewrote my blog using the Hugo static site generator.
 If you visitied my site before, you&amp;rsquo;ll notice it looks identical, because I only changed the internals.
-Previously, I used a script I hacked together called bmanager, which got the job done, but far from optimally.</description>
-    </item>
-    
-  </channel>
-</rss>
+Previously, I used a script I hacked together called bmanager, which got the job done, but far from optimally.</description></item></channel></rss>
