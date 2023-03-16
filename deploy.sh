@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 directory=public
 branch=gh-pages
 build_command() {
